@@ -2,7 +2,9 @@ function Home() {
   
 
     return (
-      <><h1>Welcome To Shopzone!</h1></>
+      <div><h1>Welcome To Shopzone!</h1>
+      <p>
+      Start shopping and win prices!</p></div>
     )
   }
   
