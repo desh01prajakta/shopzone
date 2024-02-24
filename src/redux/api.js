@@ -25,8 +25,14 @@ export const apiSlice = createApi({
         body: loginUser,
       }),
     }),
+    account: builder.query({
+        query: () => ({
+          url: "/users",
+          method: "GET",
+           }),
+}),
   }),
 });
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useRegisterMutation, useLoginMutation } = apiSlice;
+export const { useRegisterMutation, useLoginMutation, useAccountQuery } = apiSlice;
