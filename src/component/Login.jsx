@@ -8,31 +8,31 @@ function Login(props) {
   });
   const [errorMsg, setError] = useState(null);
   const [login] = useLoginMutation();
-  
-  const eventHandler = async(event) => {
+
+  const eventHandler = async (event) => {
     event.preventDefault();
-    try{
-   const {data, error} = await login(userInfo);
-   
-   if(error && error.data){
-    setError(error.data)
-    console.log("error", error)
-   } else {
-    props.setToken(data.token)
-    console.log(`data ${JSON.stringify(data.token)}`)
+    try {
+      const { data, error } = await login(userInfo);
+
+      if (error && error.data) {
+        setError(error.data);
+       
+      } else {
+        props.setToken(data.token);
+      }
+    } catch (error) {
+      console.error("An error occurred during login:", error);
+      // Handle any unexpected errors here
     }
-}  catch(error){
-    console.error("An error occurred during login:", error);
-    // Handle any unexpected errors here
-  }
-}
-   const onUserInput = (e) => {
+  };
+  const onUserInput = (e) => {
     if (errorMsg) {
       setError(null);
-    } setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+    }
+    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
 
-   return (
+  return (
     <div>
       <h2>LogIn</h2>
       {errorMsg ? <p>{errorMsg}</p> : <span />}
@@ -57,7 +57,7 @@ function Login(props) {
             onChange={onUserInput}
           />
         </label>
-        
+
         <button>Submit</button>
       </form>
     </div>
