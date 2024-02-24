@@ -9,6 +9,7 @@ export const apiSlice = createApi({
     baseUrl: "https://fakestoreapi.com",
   }),
   // The "endpoints" represent operations and requests for this server
+  //   endpoint for register
   endpoints: (builder) => ({
     register: builder.mutation({
       query: (registerUser) => ({
@@ -17,8 +18,15 @@ export const apiSlice = createApi({
         body: registerUser,
       }),
     }),
+    login: builder.mutation({
+      query: (loginUser) => ({
+        url: "/auth/login",
+        method: "POST",
+        body: loginUser,
+      }),
+    }),
   }),
 });
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useRegisterMutation } = apiSlice;
+export const { useRegisterMutation, useLoginMutation } = apiSlice;
