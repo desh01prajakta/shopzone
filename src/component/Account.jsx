@@ -8,7 +8,7 @@ function Account (props){
     console.log("ERROR", error);
     console.log("isLoading", isLoading)
 
-    if (error || !data?.user ) {
+    if (error || (!data?.user && isLoading)) {
         return <p>Something went wrong!</p>;
       }
     
