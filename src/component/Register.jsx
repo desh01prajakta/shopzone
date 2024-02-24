@@ -1,4 +1,6 @@
 import { useState } from "react";
+// import api
+import { useRegisterMutation } from "../redux/api";
 
 function Register() {
   const [userInfo, setUserInfo] = useState({
@@ -8,13 +10,17 @@ function Register() {
     first_name: "",
     last_name: "",
   });
+  const [] = useRegisterMutation();
+
   const eventHandler = (event) => {
     event.preventDefault();
+    Register(userInfo);
   };
 
   const onUserInput = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
+  
   return (
     <div>
       <h2>Register</h2>
@@ -74,5 +80,6 @@ function Register() {
     </div>
   );
 }
+
 
 export default Register;
