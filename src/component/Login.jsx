@@ -1,5 +1,6 @@
 import { useLoginMutation } from "../redux/api";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login(props) {
   const [userInfo, setUserInfo] = useState({
@@ -8,6 +9,7 @@ function Login(props) {
   });
   const [errorMsg, setError] = useState(null);
   const [login] = useLoginMutation();
+  const navigate = useNavigate();
 
   const eventHandler = async (event) => {
     event.preventDefault();
@@ -19,6 +21,8 @@ function Login(props) {
        
       } else {
         props.setToken(data.token);
+        // change to product list route later
+        navigate("/account");
       }
     } catch (error) {
       console.error("An error occurred during login:", error);
