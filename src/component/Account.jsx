@@ -2,10 +2,6 @@ import { useAccountQuery } from "../redux/api";
 
 function Account(props) {
   const { data, error, isLoading } = useAccountQuery(props);
-  console.log(props);
-  console.log("DATA", data);
-  console.log("ERROR", error);
-  console.log("isLoading", isLoading);
 
   if (error || (!data?.user && isLoading)) {
     return <p>Something went wrong!</p>;
@@ -17,20 +13,18 @@ function Account(props) {
   return (
     <section>
       <h2>Account</h2>
-      {data?.user && (
-        <ul>
-          <li>Username: {data.user.username}</li>
-          {data.user.email ? <li>Email: {data.user.email}</li> : ""}
-          {data.user.first_name ? (
-            <li>First Name: {data.user.first_name}</li>
-          ) : (
-            ""
-          )}
-          {data.user.last_name ? <li>Last Name: {data.user.last_name}</li> : ""}
-          {data.user.phone ? <li>Phone: {data.user.phone}</li> : ""}
-          {data.user.address ? <li>Address: {data.user.address}</li> : ""}
-        </ul>
-      )}
+      <div>
+        {/* {data?.users && ( */}
+          <ul>
+            <li>Username: {data.username}</li>
+            {data.email ? <li>Email: {data.email}</li> : ""}
+            {data.firstname ? <li>First Name: {data.firstname}</li> : ""}
+            {data.lastname ? <li>Last Name: {data.lastname}</li> : ""}
+            {data.phone ? <li>Phone: {data.phone}</li> : ""}
+            {data.address ? <li>Address: {data.address}</li> : ""}
+          </ul>
+        {/* )} */}
+      </div>
     </section>
   );
 }
