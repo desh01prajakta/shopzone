@@ -10,6 +10,7 @@ import Login from './component/Login'
 import Account from './component/Account'
 import Navbar from './component/Navbar'
 import ProductList from './component/ProductList'
+import ProductDetails from './component/ProductDetails'
 
 function App() {
   const[token,setToken]= useState(null);
@@ -23,7 +24,8 @@ function App() {
         <Route path = "/register" element = {<Register setToken={setToken} />}/>
         <Route path = "/login" element = {<Login setToken={setToken}/>}/>
         <Route path = "/account" element = {<Account token={token} />}/>
-        <Route path = "/productlist" element = {<ProductList/>}/>
+        <Route path = "/productlist" element = {<ProductList />}/>
+        <Route path = "/productdetails/:id" element = {<ProductDetails />}/>
               </Routes>
      </BrowserRouter>
       </div>

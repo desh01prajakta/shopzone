@@ -1,4 +1,5 @@
 import { useProductListQuery } from "../redux/api";
+import { Link } from "react-router-dom";
 
 function ProductList() {
   const { data, error, isLoading } = useProductListQuery();
@@ -23,6 +24,7 @@ function ProductList() {
             <h5>
                Rating: {product.rating.rate} ({product.rating.count})
             </h5>
+            <Link to={`/productdetails/${product.id}`}>See Details</Link>
           </div>
         );
       })}
