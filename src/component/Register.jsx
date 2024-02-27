@@ -2,7 +2,7 @@ import { useState } from "react";
 // import api
 import { useRegisterMutation } from "../redux/api";
 
-function Register(props) {
+function Register({setToken}) {
   const [userInfo, setUserInfo] = useState({
     username: "",
     password: "",
@@ -23,7 +23,7 @@ function Register(props) {
    }
    else{
     //data.token --> has token value
-    props.setToken(data.token);
+   setToken(data.token);
     console.log(`error ${JSON.stringify(data.token)}`)
    }
   };
