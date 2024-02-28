@@ -11,6 +11,7 @@ import Account from './component/Account'
 import Navbar from './component/Navbar'
 import ProductList from './component/ProductList'
 import ProductDetails from './component/ProductDetails'
+import Cart from './component/Carts'
 
 function App() {
   const[token,setToken]= useState(null);
@@ -26,6 +27,7 @@ function App() {
         <Route path = "/account" element = {<Account token={token} />}/>
         <Route path = "/productlist" element = {<ProductList />}/>
         <Route path = "/productdetails/:id" element = {<ProductDetails />}/>
+        <Route path = "/carts" element = {<Cart />}/>
               </Routes>
      </BrowserRouter>
       </div>

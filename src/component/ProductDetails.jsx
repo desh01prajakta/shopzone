@@ -13,10 +13,6 @@ function ProductDetails() {
     return <p>Something Went Wrong!</p>;
   }
 
-  console.log("data", data);
-  console.log("error", error);
-  console.log("isLoading", isLoading);
-
   return (
     <div>
       <h2>Product Details</h2>

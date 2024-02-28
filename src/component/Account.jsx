@@ -14,14 +14,20 @@ function Account(props) {
     <section>
       <h2>Account</h2>
       <div>
-        {/* {data?.users && ( */}
+        {isLoading && <p>Loading...</p>}
           <ul>
-            <li>Username: {data.username}</li>
-            {data.email ? <li>Email: {data.email}</li> : ""}
-            {data.firstname ? <li>First Name: {data.firstname}</li> : ""}
-            {data.lastname ? <li>Last Name: {data.lastname}</li> : ""}
+            <li>Username: {data?.username}</li>
+            <li>Email: {data.email}</li>
+            <li>First Name: {data.firstname}</li>
+            <li>Last Name: {data.lastname}</li>
+            <li>Phone: {data.phone}</li>
+            <li>Address:{data.address}</li>
+
+            {/* {data.email ? <li>Email: {data.email}</li> : ""} */}
+            {/* {data.firstname ? <li>First Name: {data.firstname}</li> : ""} */}
+            {/* {data.lastname ? <li>Last Name: {data.lastname}</li> : ""}
             {data.phone ? <li>Phone: {data.phone}</li> : ""}
-            {data.address ? <li>Address: {data.address}</li> : ""}
+            {data.address ? <li>Address: {data.address}</li> : ""} */}
           </ul>
         {/* )} */}
       </div>

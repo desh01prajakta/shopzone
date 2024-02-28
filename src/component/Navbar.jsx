@@ -23,6 +23,7 @@ function Navbar(props) {
       <NavLink to="/login">Login</NavLink>
       <NavLink to="/account">Account</NavLink>
       <NavLink to="/productlist">Product List</NavLink>
+      <NavLink to="/cart">Cart</NavLink>
     </nav>
   );
 }
