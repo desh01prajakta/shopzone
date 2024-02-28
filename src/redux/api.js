@@ -53,5 +53,5 @@ export const apiSlice = createApi({
 });
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useRegisterMutation, useLoginMutation, useAccountQuery, useProductListQuery, useProductDetailsQuery, useCarstQuery } =
+export const { useRegisterMutation, useLoginMutation, useAccountQuery, useProductListQuery, useProductDetailsQuery, useCartsQuery } =
   apiSlice;
