@@ -27,7 +27,7 @@ function App() {
         <Route path = "/account" element = {<Account token={token} />}/>
         <Route path = "/productlist" element = {<ProductList />}/>
         <Route path = "/productdetails/:id" element = {<ProductDetails />}/>
-        <Route path = "/carts" element = {<Cart />}/>
+        <Route path = "/cart" element = {<Cart />}/>
               </Routes>
      </BrowserRouter>
       </div>
