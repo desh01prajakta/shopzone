@@ -3,7 +3,7 @@ import { useAccountQuery } from "../redux/api";
 function Account(props) {
   const { data, error, isLoading } = useAccountQuery(props);
 
-  if (error || (!data?.user && isLoading)) {
+  if (error || (!data?.username && isLoading)) {
     return <p>Something went wrong!</p>;
   }
 
@@ -16,7 +16,7 @@ function Account(props) {
       <div>
         {isLoading && <p>Loading...</p>}
           <ul>
-            <li>Username: {data?.username}</li>
+            <li>Username: {data.username}</li>
             <li>Email: {data.email}</li>
             <li>First Name: {data.firstname}</li>
             <li>Last Name: {data.lastname}</li>

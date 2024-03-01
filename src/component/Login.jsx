@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login(props) {
+  // const [login, { data, error, isLoading }] = useLoginMutation();
   const [userInfo, setUserInfo] = useState({
     username: "",
     password: "",
@@ -13,28 +14,33 @@ function Login(props) {
 
   const eventHandler = async (event) => {
     event.preventDefault();
-    try {
-      const { data, error } = await login(userInfo);
-
-      if (error && error.data) {
-        setError(error.data);
-       
-      } else {
-        props.setToken(data.token);
-        // change to product list route later
-        navigate("/account");
-      }
-    } catch (error) {
-      console.error("An error occurred during login:", error);
-      // Handle any unexpected errors here
+    const { data, error } = await login(userInfo);
+    if (error) {
+      // error.data
+      setError(error.data);
+    } else {
+      // data.token
+      props.setToken(data.token);
+      //TODO: change to product list route later
+      navigate("/account");
     }
   };
+
   const onUserInput = (e) => {
     if (errorMsg) {
       setError(null);
     }
-    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+    setUserInfo({ ...userInfo, [e.target.username]: e.target.value });
   };
+
+  // if(data && data.user){
+  //   const user = data.user.find((user) => userInfo.username && user.password === userInfo.password);
+  //   if (user){
+  //     props.setUserId(user.id);
+  //   } else {
+  //     setError("Invalid username or password");
+  //   }
+  // }
 
   return (
     <div>

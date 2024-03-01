@@ -31,7 +31,7 @@ export const apiSlice = createApi({
         method: "GET",
       }),
     }),
-    productList: builder.query({
+     productList: builder.query({
         query:() => ({
            url: "/products",
            method: "GET",
