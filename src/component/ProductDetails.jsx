@@ -2,6 +2,7 @@ import { useProductDetailsQuery } from "../redux/api";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/store";
+import { Link } from "react-router-dom";
 
 function ProductDetails() {
   let { id } = useParams();
@@ -34,7 +35,8 @@ function ProductDetails() {
             <p>
               Rating: {data.rating.rate} ({data.rating.count})
             </p>
-            <button onClick={handleAddToCart}>Add To Cart</button>
+            <Link to={`/carts/${data.id}`}>Add to Cart</Link>
+            {/* <button onClick={handleAddToCart}>Add To Cart</button> */}
           </div>
           </div>
   );
