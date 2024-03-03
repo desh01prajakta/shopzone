@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../style/productList.css"
 
+
 function ProductList() {
   const { data, error, isLoading } = useProductListQuery();
   const [sortBy, setSortBy] = useState(null);
@@ -50,6 +51,11 @@ function ProductList() {
             <img className= "picture" src={product.image} />
             <div className="details">
             <h3> {product.title}</h3>
+            <img src="./images/grocery.jpg" />
+            <span>{product.rating.rate}</span>
+            <span>({product.rating.count})</span>
+            <span></span>
+            <span></span>
             <h5>
                Rating: {product.rating.rate} ({product.rating.count})
             </h5>
