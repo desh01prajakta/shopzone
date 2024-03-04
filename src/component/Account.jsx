@@ -1,7 +1,7 @@
-import { useAccountQuery } from "../redux/api";
+import { useUsersQuery } from "../redux/api";
 
-function Account(props) {
-  const { data, error, isLoading } = useAccountQuery(props);
+function Users(props) {
+  const { data, error, isLoading } = useUsersQuery(props);
 
   if (error || (!data?.username && isLoading)) {
     return <p>Something went wrong!</p>;
@@ -12,7 +12,7 @@ function Account(props) {
   }
   return (
     <section>
-      <h2>Account</h2>
+      <h2>User</h2>
       <div>
         {isLoading && <p>Loading...</p>}
           <ul>
@@ -34,4 +34,4 @@ function Account(props) {
     </section>
   );
 }
-export default Account;
+export default Users;

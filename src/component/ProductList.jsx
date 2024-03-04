@@ -51,11 +51,9 @@ function ProductList() {
             <img className= "picture" src={product.image} />
             <div className="details">
             <h3> {product.title}</h3>
-            <img src="./images/grocery.jpg" />
+            <img src="./images/star.png" />
             <span>{product.rating.rate}</span>
             <span>({product.rating.count})</span>
-            <span></span>
-            <span></span>
             <h5>
                Rating: {product.rating.rate} ({product.rating.count})
             </h5>

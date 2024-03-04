@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import Category from "./Category";
 
 function Navbar(props) {
     const navigate = useNavigate();
@@ -10,10 +11,11 @@ function Navbar(props) {
     return (
       <nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/account">Account</NavLink>
+        <NavLink to="/users">Account</NavLink>
         <a onClick={logoutUser}>Logout</a>
         <NavLink to="/productlist">Product List</NavLink>
         <NavLink to="/cart">Cart</NavLink>
+        
       </nav>
     );
   }
@@ -22,9 +24,10 @@ function Navbar(props) {
       <NavLink to="/">Home</NavLink>
       <NavLink to="/register">Register</NavLink>
       <NavLink to="/login">Login</NavLink>
-      <NavLink to="/account">Account</NavLink>
+      <NavLink to="/users">Account</NavLink>
       <NavLink to="/productlist">Product List</NavLink>
       <NavLink to="/cart">Cart</NavLink>
+      
     </nav>
   );
 }
