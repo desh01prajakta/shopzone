@@ -18,33 +18,9 @@ function ProductList() {
     return <p>Loading...</p>;
   }
   
-  const handleSort = (criteria) => {
-    if (sortBy === criteria) {
-      // Toggle sorting order if the same criteria is clicked again
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-    } else {
-      // If sorting criteria changed, set new criteria and default to ascending order
-      setSortBy(criteria);
-      setSortOrder('asc');
-    }
-  };
-  const sortedData = [...data].sort((a, b) => {
-    if (sortBy === 'title') {
-      return sortOrder === 'asc' ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title);
-    } else if (sortBy === 'price') {
-      return sortOrder === 'asc' ? a.price - b.price : b.price - a.price;
-    }
-    return 0;
-  });
-
   return (
     <div>
       <h2>Product List</h2>
-      <div>
-        <button onClick={() => handleSort('title')}>Sort by Title</button>
-        <button onClick={() => handleSort('price')}>Sort by Price</button>
-      </div>
-      <button>Filter</button>
       {data.map((product) => {
         return (
           <div className="container" key={product.id}>
