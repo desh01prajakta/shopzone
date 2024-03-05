@@ -27,13 +27,14 @@ function ProductList() {
             <img className= "picture" src={product.image} />
             <div className="details">
             <h3> {product.title}</h3>
-            <img src="./images/star.png" />
+            <img src="../../public/images/star.png"  width={
+              "15px"
+            }/>
             <span>{product.rating.rate}</span>
             <span>({product.rating.count})</span>
-            <h5>
-               Rating: {product.rating.rate} ({product.rating.count})
-            </h5>
+            <div>
             <Link className = "prod" to={`/productdetails/${product.id}`}>See Details</Link>
+            </div>
             </div>
           </div>
         );

@@ -8,7 +8,7 @@ import Home from './component/Home'
 import Register from './component/Register'
 import { useState } from 'react'
 import Login from './component/Login'
-import Users from './component/Account'
+import Account from './component/Account'
 import Navbar from './component/Navbar'
 import ProductList from './component/ProductList'
 import ProductDetails from './component/ProductDetails'
@@ -18,6 +18,8 @@ import Category from './component/Category';
 
 function App() {
   const[token,setToken]= useState(null);
+  const[userId, setUserId] = useState(null)
+  const [productId,setProductId] =useState(null)
   console.log("token", token);
   return (
     <div>
@@ -27,11 +29,11 @@ function App() {
       <Routes>
         <Route path = "/" element = {<Home/>}/>
         <Route path = "/register" element = {<Register setToken={setToken} />}/>
-        <Route path = "/login" element = {<Login setToken={setToken}/>}/>
-        <Route path = "/users" element = {<Users token={token} />}/>
+        <Route path = "/login" element = {<Login setToken={setToken} setUserId= {setUserId}/>}/>
+        <Route path = "/account/:id" element = {<Account token={token} userId={userId}/>}/>
         <Route path = "/productlist" element = {<ProductList />}/>
         <Route path = "/productdetails/:id" element = {<ProductDetails />}/>
-        <Route path = "/cart" element = {<Cart token={token} />}/>
+        <Route path = "/cart/:id" element = {<Cart token={token} productId= {productId}  />}/>
         
         </Routes>
      </BrowserRouter>

@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 function ProductDetails() {
   let { id } = useParams();
   const { data, error, isLoading } = useProductDetailsQuery(id);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleAddToCart = async(event) => {
-    event.preventDefault();
-    // Dispatch an action to add the product to the cart
-    dispatch(addToCart(data)); // Assuming `data` contains all necessary information about the product
-  };
+  // const handleAddToCart = async(event) => {
+  //   event.preventDefault();
+  //   // Dispatch an action to add the product to the cart
+  //   dispatch(addToCart(data)); // Assuming `data` contains all necessary information about the product
+  // };
 
   if (isLoading) {
     return <p>Data is Loading!</p>;
