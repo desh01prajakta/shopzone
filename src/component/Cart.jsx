@@ -1,8 +1,9 @@
-import { useCartQuery } from "../redux/api";
+import { useCartsQuery } from "../redux/api";
 
 
-function Cart (props){
-    const { data, error, isLoading } = useCartQuery();
+function Carts ({id, token}){
+  
+    const { data, error, isLoading } = useCartsQuery({id, token });
 
     if (error) {
         return <p>Something went wrong!</p>;
@@ -16,4 +17,4 @@ function Cart (props){
     )
 }
 
-export default Cart;
+export default Carts;

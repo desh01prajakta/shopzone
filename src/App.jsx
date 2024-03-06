@@ -12,14 +12,14 @@ import Account from './component/Account'
 import Navbar from './component/Navbar'
 import ProductList from './component/ProductList'
 import ProductDetails from './component/ProductDetails'
-import Cart from './component/Cart'
+import Carts from './component/Cart'
 import Category from './component/Category';
 
 
 function App() {
   const[token,setToken]= useState(null);
   const[userId, setUserId] = useState(null)
-  const [productId,setProductId] =useState(null)
+  const [id,setId] =useState(null)
   console.log("token", token);
   return (
     <div>
@@ -33,7 +33,8 @@ function App() {
         <Route path = "/account/:id" element = {<Account token={token} userId={userId}/>}/>
         <Route path = "/productlist" element = {<ProductList />}/>
         <Route path = "/productdetails/:id" element = {<ProductDetails />}/>
-        <Route path = "/cart/:id" element = {<Cart token={token} productId= {productId}  />}/>
+        {/* <Route path = "/carts" element = {<carts />}/> */}
+        <Route path = "/carts/:id" element = {<Carts token={token} id= {id}  />}/>
         
         </Routes>
      </BrowserRouter>
