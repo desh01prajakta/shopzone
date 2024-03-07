@@ -1,7 +1,10 @@
 import { useCartsQuery } from "../redux/api";
+import { useParams } from "react-router-dom";
 
 
-function Carts ({id, token}){
+function Carts ({token}){
+  let { id } = useParams();
+  console.log(id)
   
     const { data, error, isLoading } = useCartsQuery({id, token });
 

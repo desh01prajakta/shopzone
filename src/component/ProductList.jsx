@@ -6,8 +6,8 @@ import "../style/productList.css"
 
 function ProductList() {
   const { data, error, isLoading } = useProductListQuery();
-  const [sortBy, setSortBy] = useState(null);
-  const [sortOrder, setSortOrder] = useState('asc'); 
+  // const [sortBy, setSortBy] = useState(null);
+  // const [sortOrder, setSortOrder] = useState('asc'); 
 
 
   if (error) {
