@@ -1,8 +1,7 @@
 import "../style/category.css";
 import { useState } from "react";
 
-function Category() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+function Category({ selectedCategory, setSelectedCategory }) {
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
   };
@@ -11,7 +10,7 @@ function Category() {
     <div className="mil">
       <h2 className="title"> Category </h2>
       <label className="category">
-        <input type="radio" name="test" />
+        <input onChange={handleChange} type="radio" name="test" value="All" title="All" />
         <span className="checkmark"></span>All
       </label>
       <label className="category">
