@@ -6,7 +6,9 @@ import Category from "./Category";
 import Price from "./Price";
 
 
+
 function ProductList() {
+  
   const { data, error, isLoading } = useProductListQuery();
   // const [sortBy, setSortBy] = useState(null);
   // const [sortOrder, setSortOrder] = useState('asc'); 

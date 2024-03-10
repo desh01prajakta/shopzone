@@ -33,7 +33,8 @@ import cartReducer from "../cartSlice"
 export default configureStore({
     reducer: {
         // [apiSlice.reducerPath]: apiSlice.reducer,
-        cart: cartReducer
+        carts: cartReducer
     },
 middleware: (getDefaultMiddleware)=>
 getDefaultMiddleware().concat(apiSlice.middleware),});
+  

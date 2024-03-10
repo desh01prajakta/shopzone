@@ -14,17 +14,18 @@ import ProductList from './component/ProductList'
 import ProductDetails from './component/ProductDetails'
 import Carts from './component/Cart'
 import Category from './component/Category';
-import { useDispatch } from '@reduxjs/toolkit';
+// import { useDispatch } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
 import { setToCart } from './cartSlice';
-
+import { useDispatch } from 'react-redux';
 
 function App() {
   const[token,setToken]= useState(null);
   const[userId, setUserId] = useState(null)
   const [cartItems,setCartItems] = useState([]);
   const [id,setId] =useState(null)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
   console.log("token", token);
 useEffect(() => {
   async function getItems(){

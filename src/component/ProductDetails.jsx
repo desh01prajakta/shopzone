@@ -1,13 +1,29 @@
 import { useProductDetailsQuery } from "../redux/api";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { addToCart } from "../redux/store";
 import { Link } from "react-router-dom";
 import "../style/productList.css"
 import { useState } from "react";
+import { getProducts, setToCart } from "../cartSlice";
 
 
 function ProductDetails(props) {
+  const products = useSelector (getProducts);
+  const dispatch = useDispatch();
+  const completedProducts = productId => {
+    const updatedProduct = products.map(item => {
+      if (product.id === productId){
+        return {
+          ...task, 
+          completed: !item.completed
+        }
+      }else {
+        return products
+      }
+    })
+    dispatch (setToCart(updatedItems));
+  }
   console.log(props)
   let { id } = useParams();
   const { data, error, isLoading } = useProductDetailsQuery(id);
