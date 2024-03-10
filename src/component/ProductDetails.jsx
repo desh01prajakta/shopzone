@@ -1,14 +1,23 @@
 import { useProductDetailsQuery } from "../redux/api";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/store";
+// import { addToCart } from "../redux/store";
 import { Link } from "react-router-dom";
 import "../style/productList.css"
+import { useState } from "react";
 
 
-function ProductDetails() {
+function ProductDetails(props) {
+  console.log(props)
   let { id } = useParams();
   const { data, error, isLoading } = useProductDetailsQuery(id);
+  // const [addToCart, setAddToCart] = useState(null)
+
+  const handleClick = (product) => {
+    // event.preventDefault()
+    console.log(props.cartItems)
+    props.setCartItems([...props.cartItems, product]);
+  };
   
   if (isLoading) {
     return <p>Data is Loading!</p>;
@@ -35,7 +44,7 @@ function ProductDetails() {
             <span>{data.rating.rate}</span>
             <span>({data.rating.count})</span>
             <div className="prod">
-            <Link to={`/carts/${data.id}`}>Add to Cart</Link>
+            <Link onClick = {() => handleClick(data)} to={"/cart"}>Add to Cart</Link>
             </div>
             {/* <button onClick={handleAddToCart}>Add To Cart</button> */}
             </div>

@@ -32,44 +32,78 @@ export const apiSlice = createApi({
       }),
     }),
     account: builder.query({
-      query: ({id,token}) => ({
+      query: ({ id, token }) => ({
         url: `/users/${id}`,
         method: "GET",
-        headers:{
-          authorization: `Bearer ${token}` 
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
+    productList: builder.query({
+      query: () => ({
+        url: "/products",
+        method: "GET",
+      }),
+    }),
+    productDetails: builder.query({
+      query: (id) => ({
+        url: `/products/${id}`,
+        method: "GET",
+      }),
+    }),
+    getCarts: builder.query({
+      query: () => ({
+        url: "/carts",
+        method: "GET",
+      }),
+    }),
+    carts: builder.query({
+      query: ({ id, token }) => ({
+        url: `/carts/${id}`,
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
+    deleteCart: builder.mutation({
+      query: ({ id, token }) => ({
+        url: `/carts/${id}`,
+        method: "DELETE",
+      }),
+    }),
+    postCart: builder.mutation({
+      query: (body) => ({
+        url: "/carts",
+        method: "POST",
+        body,
+      }),
+    }),
+    updateCart: builder.mutation({
+      query: (body) => ({
+        url: `/carts/${body.cartId}`,
+        method: "PUT",
+        body:{
+          userId: body.userId,
+          products:[{productId: body.productId,quantity: body.quantity}]
         }
       }),
     }),
-     productList: builder.query({
-        query:() => ({
-           url: "/products",
-           method: "GET",
-        })
-    }),
-    productDetails: builder.query({
-       query:(id) => ({
-        url: `/products/${id}`,
-        method: "GET",
-       }) 
-    }),
-    getCarts: builder.query({
-        query:() => ({
-         url: "/carts",
-         method: "GET",
-        }) 
-     }),
-     carts: builder.query({
-      query:({id, token}) => ({
-       url: `/carts/${id}`,
-       method: "GET",
-       headers:{
-        authorization: `Bearer ${token}` 
-      }
-      }) 
-   })
   }),
 });
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useRegisterMutation, useLoginMutation, useUsersQuery,useGetCartsQuery, useProductListQuery, useProductDetailsQuery, useAccountQuery, useCartsQuery } =
-  apiSlice;
+export const {
+  usePostCartMutation,
+  useDeleteCartMutation,
+  useRegisterMutation,
+  useLoginMutation,
+  useUsersQuery,
+  useGetCartsQuery,
+  useProductListQuery,
+  useProductDetailsQuery,
+  useAccountQuery,
+  useCartsQuery,
+  useUpdateCartMutation
+} = apiSlice;

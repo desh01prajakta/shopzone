@@ -1,22 +1,35 @@
 import { useCartsQuery } from "../redux/api";
 import { useParams } from "react-router-dom";
+import { useDeleteCartMutation, usePostCartMutation, useUpdateCartMutation, useGetCartsQuery } from "../redux/api";
+import { useState } from "react";
 
 
-function Carts ({token}){
+function Carts (props){
   let { id } = useParams();
-  console.log(id)
   
-    const { data, error, isLoading } = useCartsQuery({id, token });
+  const [totalPrice,setTotalPrice] = useState([]);
 
-    if (error) {
-        return <p>Something went wrong!</p>;
-      }
+    // const { data, error, isLoading } = useCartsQuery({id, token });
+
+
+    // if (error) {
+    //     return <p>Something went wrong!</p>;
+    //   }
     
-      if (isLoading) {
-        return <p>Loading...</p>;
-      } 
+    //   if (isLoading) {
+    //     return <p>Loading...</p>;
+    //   } 
+    console.log(props.cartItems)
     return(
-        <h2>Cart</h2>
+      <div>
+        <h2>Selected Items</h2>
+        {props.cartItems && props.cartItems.map(product => {
+          <div key = {product.id}>
+            <h3>{product.title}</h3>
+            
+          </div>
+        })}
+        </div>
     )
 }
 

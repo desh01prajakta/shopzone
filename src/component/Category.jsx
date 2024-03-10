@@ -4,6 +4,7 @@ import { useState } from "react";
 function Category({ selectedCategory, setSelectedCategory }) {
   const handleChange = (event) => {
     setSelectedCategory(event.target.value);
+    
   };
 
   return (

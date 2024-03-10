@@ -15,7 +15,7 @@ function Navbar(props) {
         <NavLink to={`/account/${id}`}>Account</NavLink>
         <a onClick={logoutUser}>Logout</a>
         <NavLink to="/productlist">Product List</NavLink>
-        <NavLink to={`/cart/${id}`}>Cart</NavLink>
+        <NavLink to={"/cart"}>Cart</NavLink>
         
       </nav>
     );

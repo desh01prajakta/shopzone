@@ -8,6 +8,11 @@ function Price({setSelectedPrice}){
         <div className="mil">
             <h2 className="sidebar-title-price-title">Price</h2>
             <label className="category">
+            <input onChange = {handleChange} type="radio" name="test2" value= "All"
+          title="All" />
+            <span className="checkmark"></span>All
+           </label>
+            <label className="category">
             <input onChange = {handleChange} type="radio" name="test2" value= "0 100"
           title="$0 - $100" />
             <span className="checkmark"></span>$0 - $100

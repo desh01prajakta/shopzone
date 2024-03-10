@@ -12,7 +12,7 @@ function ProductList() {
   // const [sortOrder, setSortOrder] = useState('asc'); 
 
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedPrice, setSelectedPrice] = useState(null);
+  const [selectedPrice, setSelectedPrice] = useState("All");
   if (error) {
     return <p>Something went wrong!</p>;
   }
@@ -21,14 +21,17 @@ function ProductList() {
     return <p>Loading...</p>;
   }
   const productCategory = selectedCategory && data? data?.filter(product => {
-    if(selectedCategory === "All"){
+    if(selectedCategory === "All")
+    {
       return product
     }
-    return product.category.toLowerCase().includes(selectedCategory.toLowerCase())
+    return product.category.toLowerCase()===(selectedCategory.toLowerCase())
     
   }) : data
-  const productToDisplay = selectedPrice && productCategory? productCategory.filter( product => {
+  const productToDisplay = selectedPrice && productCategory? productCategory.filter( product => {    
     let range = selectedPrice.split(" ")
+    if(selectedPrice === "All")
+    {return product}
     return product.price <= parseInt(range [1]) && product.price >= parseInt(range [0])
   }): data
 
