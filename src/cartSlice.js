@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
   products: [], // Array to hold the items in the cart
 };
@@ -34,7 +35,3 @@ export const { addToCart, setToCart } = cartSlice.actions;
 export const getProducts = (state) => state.cart.products
 export default cartSlice.reducer
 
-
-// export const { addTodo, setTodos } = todoSlice.actions;
-// export const getTasks = (state) => state.todos.products;
-// export default todoSlice.reducer;

@@ -11,29 +11,27 @@ import { getProducts, setToCart } from "../cartSlice";
 function ProductDetails(props) {
   const products = useSelector (getProducts);
   const dispatch = useDispatch();
-  const completedProducts = productId => {
-    const updatedProduct = products.map(item => {
-      if (product.id === productId){
-        return {
-          ...task, 
-          completed: !item.completed
-        }
-      }else {
-        return products
-      }
-    })
-    dispatch (setToCart(updatedItems));
-  }
-  console.log(props)
   let { id } = useParams();
   const { data, error, isLoading } = useProductDetailsQuery(id);
-  // const [addToCart, setAddToCart] = useState(null)
-
-  const handleClick = (product) => {
-    // event.preventDefault()
-    console.log(props.cartItems)
-    props.setCartItems([...props.cartItems, product]);
-  };
+  const completeProduct = productId => {
+    const updatedProducts = products.map(product => {
+      if (product.id === productId){
+        return {
+          ...product, 
+          completed: !product.completed
+        }
+      }else {
+        return product
+      }
+    })
+    dispatch (setToCart(updatedProducts));
+  }
+  // console.log(props)
+  
+  // const completeProduct = (product) => {
+  //   // event.preventDefault()
+  //   dispatch(setToCart([...products, product]));
+  // };
   
   if (isLoading) {
     return <p>Data is Loading!</p>;
@@ -60,9 +58,8 @@ function ProductDetails(props) {
             <span>{data.rating.rate}</span>
             <span>({data.rating.count})</span>
             <div className="prod">
-            <Link onClick = {() => handleClick(data)} to={"/cart"}>Add to Cart</Link>
+            <Link onClick = {() => completeProduct(data.id)} to={"/cart"}>Add to Cart</Link>
             </div>
-            {/* <button onClick={handleAddToCart}>Add To Cart</button> */}
             </div>
           </div>
           </div>
