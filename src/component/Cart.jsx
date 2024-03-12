@@ -4,7 +4,7 @@ import { useDeleteCartMutation, usePostCartMutation, useUpdateCartMutation, useG
 import { useState } from "react";
 
 
-function Carts (props){
+function Carts (){
   let { id } = useParams();
   
   const [totalPrice,setTotalPrice] = useState([]);
@@ -19,16 +19,11 @@ function Carts (props){
     //   if (isLoading) {
     //     return <p>Loading...</p>;
     //   } 
-    console.log(props.cartItems)
+    
     return(
       <div>
         <h2>Selected Items</h2>
-        {props.cartItems && props.cartItems.map(product => {
-          <div key = {product.id}>
-            <h3>{product.title}</h3>
-            
-          </div>
-        })}
+       
         </div>
     )
 }

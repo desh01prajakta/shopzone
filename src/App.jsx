@@ -22,7 +22,7 @@ import { useDispatch } from 'react-redux';
 function App() {
   const[token,setToken]= useState(null);
   const[userId, setUserId] = useState(null)
-  const [cartItems,setCartItems] = useState([]);
+  // const [cartItems,setCartItems] = useState([]);
   const [id,setId] =useState(null)
   const dispatch = useDispatch();
 
@@ -47,9 +47,9 @@ return (
         <Route path = "/login" element = {<Login setToken={setToken} setUserId= {setUserId}/>}/>
         <Route path = "/account/:id" element = {<Account token={token} userId={userId}/>}/>
         <Route path = "/productlist" element = {<ProductList />}/>
-        <Route path = "/productdetails/:id" element = {<ProductDetails token={token} cartItems={cartItems} setCartItems={setCartItems} />}/>
+        <Route path = "/productdetails/:id" element = {<ProductDetails token={token}  />}/>
         {/* <Route path = "/carts" element = {<carts />}/> */}
-        <Route path = "/cart" element = {<Carts token={token} id= {id} cartItems={cartItems} setCartItems={setCartItems} />}/>
+        <Route path = "/cart" element = {<Carts token={token} id= {id} />}/>
         
         </Routes>
      </BrowserRouter>

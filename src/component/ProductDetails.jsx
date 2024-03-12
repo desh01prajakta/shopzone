@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../style/productList.css"
 import { useState } from "react";
-import { getProducts, setToCart } from "../cartSlice";
+import { addToCart, setToCart } from "../cartSlice";
 
 
-function ProductDetails(props) {
-  const products = useSelector (getProducts);
+function ProductDetails() {
+  const products = useSelector (state => state.cart);
   const dispatch = useDispatch();
   let { id } = useParams();
   const { data, error, isLoading } = useProductDetailsQuery(id);
@@ -24,9 +24,9 @@ function ProductDetails(props) {
         return product
       }
     })
-    dispatch (setToCart(updatedProducts));
+    // dispatch (setToCart(updatedProducts));
   }
-  // console.log(props)
+  console.log(products)
   
   // const completeProduct = (product) => {
   //   // event.preventDefault()
@@ -40,6 +40,9 @@ function ProductDetails(props) {
   if (error) {
     return <p>Something Went Wrong!</p>;
   };
+  const addCart = () => {
+    dispatch(addToCart())
+  }
   
   return (
     <div>
@@ -58,7 +61,7 @@ function ProductDetails(props) {
             <span>{data.rating.rate}</span>
             <span>({data.rating.count})</span>
             <div className="prod">
-            <Link onClick = {() => completeProduct(data.id)} to={"/cart"}>Add to Cart</Link>
+            <button onClick = {addCart} >Add to Cart</button>
             </div>
             </div>
           </div>
