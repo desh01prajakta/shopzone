@@ -12,6 +12,7 @@ import Account from "./component/Account";
 import Navbar from "./component/Navbar";
 import ProductList from "./component/ProductList";
 import ProductDetails from "./component/ProductDetails";
+import Checkout from "./component/Checkout";
 import Carts from "./component/Cart";
 import Category from "./component/Category";
 import { useEffect } from "react";
@@ -32,13 +33,6 @@ function App() {
 
   console.log("token", token);
   useEffect(() => {
-    //   async function getItems(){
-    //     const res  = await fetch (`https://fakestoreapi.com/carts`)
-    //     const json = await res.json();
-    //     dispatch(setToCart(json))
-    //   }
-    //   getItems()
-    // }, [])
     localStorage.setItem("userId", userId);
   }, []);
 
@@ -69,7 +63,6 @@ function App() {
               />
             }
           />
-          {/* <Route path = "/carts" element = {<carts />}/> */}
           <Route
             path="/cart"
             element={
@@ -81,6 +74,7 @@ function App() {
               />
             }
           />
+          <Route path="/checkout" element={<Checkout/>} />
         </Routes>
       </BrowserRouter>
     </div>

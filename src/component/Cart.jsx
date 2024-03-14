@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   useDeleteCartMutation,
@@ -14,6 +15,7 @@ import { useState } from "react";
 function Carts() {
   let { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cartProducts = useSelector((state) => state.cart.cart);
 
    const [quantity, setQuantity] = useState(0)
@@ -23,6 +25,12 @@ function Carts() {
   };
   const removeButton = () => {
     setQuantity(quantity -1)
+  };
+  const checkoutButton = () => {
+navigate("/checkout")
+  };
+  const continueShoppingButton = () => {
+    navigate ("/productList")
   }
   
     return (
@@ -45,8 +53,8 @@ function Carts() {
               <button className="button" onClick={removeButton}>Remove Item</button>
             </div>
             <div>
-              <button>Proceed To Checkout</button>
-              <button>Continue Shopping</button>
+              <button className="button" onClick={checkoutButton}>Proceed To Checkout</button>
+              <button className="button" onClick={continueShoppingButton}>Continue Shopping</button>
               </div>
 
     </div>
