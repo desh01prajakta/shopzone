@@ -21,6 +21,9 @@ function Carts() {
   const incrementButton =() => {
     setQuantity(quantity+1)
   };
+  const removeButton = () => {
+    setQuantity(quantity -1)
+  }
   
     return (
     <div>
@@ -39,7 +42,7 @@ function Carts() {
       <div>
       <p>Quantity: {quantity}</p>
               <button className="button" onClick={incrementButton}>Add Quantity</button>
-              <button>Remove Item</button>
+              <button className="button" onClick={removeButton}>Remove Item</button>
             </div>
             <div>
               <button>Proceed To Checkout</button>
