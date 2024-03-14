@@ -1,24 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import LastPage from "./LastPage";
 
 
 function Checkout (){
     const navigate = useNavigate()
+
     const backToCartButton = () => {
 navigate("/cart")
     }
     const [userInfo, setUserInfo] = useState({
-        username: "",
-        password: "",
-        email: "",
         first_name: "",
         last_name: "",
+        address: "",
+        phone: "",
+        email: "",
+       
       });
       const [errorMsg,setError] = useState(null)
     ;  
     
       const eventHandler = async(event) => {
-        event.preventDefault();
+       event.preventDefault();
        const {data, error} = await Checkout(userInfo);
     
        if(error){
@@ -30,6 +33,7 @@ navigate("/cart")
        setToken(data.token);
         console.log(`error ${JSON.stringify(data.token)}`)
        }
+       
       };
     
       const onUserInput = (e) => {
@@ -38,12 +42,16 @@ navigate("/cart")
         }
         setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
       };
-      
+     
+    const placeOrderHandler = () =>{
+navigate ("/lastpage")
+    };
+
     return(
         <div>
         <div>
         <h2>Checkout</h2>
-        <form onSubmit={eventHandler}>
+        <form  onSubmit={eventHandler}>
         <label>First Name <input
             type="text"
             placeholder="first_name"
@@ -60,21 +68,21 @@ navigate("/cart")
             onChange={onUserInput}
           />
         </label>
-        <label>address
+        <label>Address
         <input
             type="text"
-            placeholder="Address"
-            name="Address"
-            value={userInfo.Address}
+            placeholder="address"
+            name="address"
+            value={userInfo.address}
             onChange={onUserInput}
           />
         </label>
         <label>Phone Number
         <input
-            type= "string"
-            placeholder="Number"
-            name="Number"
-            value={userInfo.number}
+            type= "tel"
+            placeholder="phone number"
+            name="phone"
+            value={userInfo.phone}
             onChange={onUserInput}
           />
         </label>
@@ -87,7 +95,7 @@ navigate("/cart")
             onChange={onUserInput}
           />
         </label>
-        <label>Place your order</label>
+        <label onClick={placeOrderHandler}>Place your order</label>
         </form>
         </div>
         <div>

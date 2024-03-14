@@ -18,6 +18,7 @@ import Category from "./component/Category";
 import { useEffect } from "react";
 import { setToCart } from "./cartSlice";
 import { useDispatch } from "react-redux";
+import LastPage from "./component/LastPage";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -75,6 +76,7 @@ function App() {
             }
           />
           <Route path="/checkout" element={<Checkout/>} />
+          <Route path="lastpage" element={<LastPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
