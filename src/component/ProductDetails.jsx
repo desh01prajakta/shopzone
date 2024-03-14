@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { addToCart } from "../cartSlice";
 
-function ProductDetails() {
+function ProductDetails({token}) {
   // const products = useSelector (state => state.cart);
   const dispatch = useDispatch();
   let { id } = useParams();
@@ -81,9 +81,9 @@ function ProductDetails() {
           <span>{data.rating.rate}</span>
           <span>({data.rating.count})</span>
           <div className="prod">
-            <Link to={"/cart"} onClick={handleAddToCart}>
+            {token && <Link to={"/cart"} onClick={handleAddToCart}>
               Add to Cart
-            </Link>
+            </Link>}
           </div>
         </div>
       </div>

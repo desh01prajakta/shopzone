@@ -27,12 +27,31 @@ const cartSlice = createSlice({
       state.cart = payload;
       return state
     },
+    removeCart: (state, action) => {
+      const newProduct = action.payload;
+      const existingProduct = state.cart.find(
+        (product) => product.id === newProduct.id
+      );
+
+      if (existingProduct) {
+        // If the item already exists in the cart, increment its quantity
+        existingProduct.quantity-- ;
+      if (existingProduct.quantity <= 0) {
+      state.cart = state.cart.filter(product => {
+        return product.id !== newProduct.id
+      })          
+      }
+      } 
+      return state
+
+    }
+    
     
     // You can define other actions such as removeFromCart, updateQuantity, etc.
   },
 });
 
-export const { addToCart, setToCart } = cartSlice.actions;
+export const { addToCart, setToCart, removeCart } = cartSlice.actions;
 //   export default cartSlice.reducer;
 // export const getProducts = (state) => state.cart;
 export default cartSlice.reducer;

@@ -2,33 +2,36 @@ import { useParams, useNavigate } from "react-router-dom";
 import {useDeleteCartMutation, useCartsQuery} from "../redux/api";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import { addToCart, removeCart } from "../cartSlice";
 
 function Carts({ token, userId }) {
   let { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const cartProducts = useSelector((state) => state.cart.cart);
-  // const [totalPrice, setTotalPrice] = useState(0);
+  console.log("cartProducts", cartProducts)
+  const [totalPrice, setTotalPrice] = useState(0);
   // const [deleteCart] = useDeleteCartMutation();
 
 // const {data: cartData, error: cartError, isLoading: cartLoading} = useCartsQuery({token, id:userId});
 
 // console.log("this is a cart data api", cartData)
-// useEffect(() => {
-//       if(cartData){
-//   const stoaredCartItems = cartData?.products || [];
-//     const total = stoaredCartItems.reduce((acc, item) => {
-//       return acc + item.price * item.quantity;
-//     }, 0);
-//     setTotalPrice(total);
-//   }
-// }, [cartData]);
+useEffect(() => {
+      if(cartProducts){
+  const stoaredCartItems = cartProducts || [];
+    const total = stoaredCartItems.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
+    setTotalPrice(total);
+  }
+}, [cartProducts]);
  
-  const incrementButton = () => {
-    setQuantity(quantity + 1);
+  const incrementButton = (product) => {
+    dispatch(addToCart(product));
   };
-  const removeButton = () => {
-    setQuantity(quantity - 1);
+  const removeButton = (product) => {
+    dispatch(removeCart(product));
   };
   const checkoutButton = () => {
     navigate("/checkout");
@@ -50,11 +53,11 @@ function Carts({ token, userId }) {
           <div className="details">
             <h3>{product.title}</h3>
             <p>Price: {product.price}</p>
-            <p>Quantity: {quantity}</p>
-        <button className="button" onClick={incrementButton}>
+            <p>Quantity: {product.quantity}</p>
+        <button className="button" onClick={() => incrementButton(product)}>
           Add Quantity
         </button>
-        <button className="button" onClick={removeButton}>
+        <button className="button" onClick={() => removeButton(product)}>
           Remove Item
         </button>
 
@@ -71,6 +74,9 @@ function Carts({ token, userId }) {
         <button className="button" onClick={continueShoppingButton}>
           Continue Shopping
         </button>
+        <p className="button">
+          Total Price {totalPrice}
+        </p>
       </div>
     </div>
   );
