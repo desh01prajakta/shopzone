@@ -9,9 +9,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      console.log("Payload:", action.payload);
-      const newProduct = action.payload;
-      const existingProduct = state.cart.find(
+           const newProduct = action.payload;
+            const existingProduct = state.cart.find(
         (product) => product.id === newProduct.id
       );
 
@@ -22,10 +21,13 @@ const cartSlice = createSlice({
         // If it's a new item, add it to the cart array
         state.cart.push({ ...newProduct, quantity: 1 });
       }
+      return state
     },
     setToCart: (state, { payload }) => {
       state.cart = payload;
+      return state
     },
+    
     // You can define other actions such as removeFromCart, updateQuantity, etc.
   },
 });

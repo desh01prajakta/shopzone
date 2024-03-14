@@ -26,35 +26,34 @@ function ProductDetails() {
   //   // dispatch (setToCart(updatedProducts));
   // }
 
-  const handleAddToCart =  () => {
-//     try{
-//       const productId = id;
-//       const cartProduct = {
-//         name: data.title,
-//         productId: productId,
-//         quantity:1,
-//         price: data.price,
-//         image: data.image
-//       };
-//       await addToCart({token, body:{id:userId, products:[cartProduct], productId}});
-// const ls = localStorage.getItem("cartItem")
-// const lsArr = JSON.parse(ls)
-// lsArr.push(cartProduct)
-// localStorage.setItem("cartItems", JSON.stringify(lsArr))
-// setCartItems (prev => [...prev,cartProduct])
-//   navigate ("/cart");
-// }catch(error){
-//   console.error("error adding to cart", error)
-// }
-//     };
+  const handleAddToCart = () => {
+    //     try{
+    //       const productId = id;
+    //       const cartProduct = {
+    //         name: data.title,
+    //         productId: productId,
+    //         quantity:1,
+    //         price: data.price,
+    //         image: data.image
+    //       };
+    //       await addToCart({token, body:{id:userId, products:[cartProduct], productId}});
+    // const ls = localStorage.getItem("cartItem")
+    // const lsArr = JSON.parse(ls)
+    // lsArr.push(cartProduct)
+    // localStorage.setItem("cartItems", JSON.stringify(lsArr))
+    // setCartItems (prev => [...prev,cartProduct])
+    //   navigate ("/cart");
+    // }catch(error){
+    //   console.error("error adding to cart", error)
+    // }
+    //     };
     const product = {
       id: data.id, // Assuming data has an id property
+      image: data.image,
       title: data.title,
       price: data.price,
-      description: data.description,
-      category: data.category,
-      rating:data.rating.rate,
-     rating: data.rating.count
+      // category: data.category,
+      
       // Add more properties as needed
     };
     dispatch(addToCart(product));

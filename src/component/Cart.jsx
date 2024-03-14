@@ -1,33 +1,28 @@
-import { useCartsQuery } from "../redux/api";
 import { useParams } from "react-router-dom";
+
 import {
   useDeleteCartMutation,
   usePostCartMutation,
   useUpdateCartMutation,
   useGetCartsQuery,
+  useCartsQuery
 } from "../redux/api";
 import { useSelector, useDispatch } from "react-redux";
 import { setToCart } from "../cartSlice";
+import { useState } from "react";
 
 function Carts() {
   let { id } = useParams();
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cart);
-  // const totalPrice = cartItems.reduce((total, item) => {
-  //   return total + item.price * item.quantity;
-  // }, 0);
 
-  // const { data, error, isLoading } = useCartsQuery(id);
-
-  // if (error) {
-  //     return <p>Something went wrong!</p>;
-  //   }
-
-  //   if (isLoading) {
-  //     return <p>Loading...</p>;
-  //   }
+   const [quantity, setQuantity] = useState(0)
   
-  return (
+  const incrementButton =() => {
+    setQuantity(quantity+1)
+  };
+  
+    return (
     <div>
       <h2>Selected Items</h2>
       {cartProducts.map((product) => (
@@ -36,14 +31,21 @@ function Carts() {
           <div className="details">
             <h3>{product.title}</h3>
             <p>Price: {product.price}</p>
-            <p>Description: {product.description}</p>
-            <p>Category: {product.category}</p>
-            <img src="../../public/images/star.png" width="15px" />
-            {/* <span>{product.rating.rate}</span> 
-            <span>({rating.count})</span> */}
-          </div>
-        </div>
+            {/* <p>Category: {product.category}</p> */}
+            {/* <img src="../../public/images/star.png" width="15px" /> */}
+            </div>
+    </div>
       ))}
+      <div>
+      <p>Quantity: {quantity}</p>
+              <button className="button" onClick={incrementButton}>Add Quantity</button>
+              <button>Remove Item</button>
+            </div>
+            <div>
+              <button>Proceed To Checkout</button>
+              <button>Continue Shopping</button>
+              </div>
+
     </div>
   );
 }
