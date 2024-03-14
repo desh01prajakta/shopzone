@@ -1,39 +1,47 @@
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
-import {
-  useDeleteCartMutation,
-  usePostCartMutation,
-  useUpdateCartMutation,
-  useGetCartsQuery,
-  useCartsQuery
-} from "../redux/api";
+import { useParams, useNavigate } from "react-router-dom";
+import {useDeleteCartMutation, useCartsQuery} from "../redux/api";
 import { useSelector, useDispatch } from "react-redux";
-import { setToCart } from "../cartSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Carts() {
+function Carts({ token, userId }) {
   let { id } = useParams();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
   const cartProducts = useSelector((state) => state.cart.cart);
+  // const [totalPrice, setTotalPrice] = useState(0);
+  // const [deleteCart] = useDeleteCartMutation();
 
-   const [quantity, setQuantity] = useState(0)
-  
-  const incrementButton =() => {
-    setQuantity(quantity+1)
+// const {data: cartData, error: cartError, isLoading: cartLoading} = useCartsQuery({token, id:userId});
+
+// console.log("this is a cart data api", cartData)
+// useEffect(() => {
+//       if(cartData){
+//   const stoaredCartItems = cartData?.products || [];
+//     const total = stoaredCartItems.reduce((acc, item) => {
+//       return acc + item.price * item.quantity;
+//     }, 0);
+//     setTotalPrice(total);
+//   }
+// }, [cartData]);
+ 
+  const incrementButton = () => {
+    setQuantity(quantity + 1);
   };
   const removeButton = () => {
-    setQuantity(quantity -1)
+    setQuantity(quantity - 1);
   };
   const checkoutButton = () => {
-navigate("/checkout")
+    navigate("/checkout");
   };
   const continueShoppingButton = () => {
-    navigate ("/productList")
-  }
-  
-    return (
+    navigate("/productList");
+  };
+  // if (cartError) {
+  //   return <p>Error: {cartError.message}</p>;
+  // }
+
+
+  return (
     <div>
       <h2>Selected Items</h2>
       {cartProducts.map((product) => (
@@ -42,21 +50,28 @@ navigate("/checkout")
           <div className="details">
             <h3>{product.title}</h3>
             <p>Price: {product.price}</p>
-            {/* <p>Category: {product.category}</p> */}
-            {/* <img src="../../public/images/star.png" width="15px" /> */}
-            </div>
-    </div>
+            <p>Quantity: {quantity}</p>
+        <button className="button" onClick={incrementButton}>
+          Add Quantity
+        </button>
+        <button className="button" onClick={removeButton}>
+          Remove Item
+        </button>
+
+          </div>
+        </div>
       ))}
       <div>
-      <p>Quantity: {quantity}</p>
-              <button className="button" onClick={incrementButton}>Add Quantity</button>
-              <button className="button" onClick={removeButton}>Remove Item</button>
-            </div>
-            <div>
-              <button className="button" onClick={checkoutButton}>Proceed To Checkout</button>
-              <button className="button" onClick={continueShoppingButton}>Continue Shopping</button>
-              </div>
-
+        
+      </div>
+      <div>
+        <button className="button" onClick={checkoutButton}>
+          Proceed To Checkout
+        </button>
+        <button className="button" onClick={continueShoppingButton}>
+          Continue Shopping
+        </button>
+      </div>
     </div>
   );
 }
