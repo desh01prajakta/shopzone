@@ -1,9 +1,6 @@
-// react router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
-// Styling
 import "./App.css";
-// Component
 import Home from "./component/Home";
 import Register from "./component/Register";
 import { useState } from "react";
@@ -14,10 +11,7 @@ import ProductList from "./component/ProductList";
 import ProductDetails from "./component/ProductDetails";
 import Checkout from "./component/Checkout";
 import Carts from "./component/Cart";
-import Category from "./component/Category";
 import { useEffect } from "react";
-import { setToCart } from "./cartSlice";
-import { useDispatch } from "react-redux";
 import LastPage from "./component/LastPage";
 
 function App() {
@@ -29,9 +23,6 @@ function App() {
     const stoaredCartItems = localStorage.getItem("cartItems");
     return stoaredCartItems ? JSON.parse(stoaredCartItems) : [];
   });
-  const [id, setId] = useState(null);
-  const dispatch = useDispatch();
-
   console.log("token", token);
   useEffect(() => {
     localStorage.setItem("userId", userId);
@@ -75,8 +66,8 @@ function App() {
               />
             }
           />
-          <Route path="/checkout" element={<Checkout/>} />
-          <Route path="lastpage" element={<LastPage/>} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="lastpage" element={<LastPage />} />
         </Routes>
       </BrowserRouter>
     </div>
