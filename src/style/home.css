@@ -1,0 +1,25 @@
+.shopImage{
+    display: block;
+    width: 100%;
+    height: 250px;
+}
+div{
+    background-color:ghostwhite;
+}
+.imageContainer {
+    position: relative;
+}
+
+.overlayText {
+    position: absolute;
+    /* top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%); */
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    z-index: 1;
+   top:.5%;
+   left: 2.5%;
+   background-color:transparent;
+}
