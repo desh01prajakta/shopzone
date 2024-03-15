@@ -5,6 +5,8 @@ function Home() {
   
 
     return (
+      <div>
+        <h3 className="title1" >Shopzone!!</h3>
       <div className="imageContainer">
         <img className= "shopImage" src="../public/images/shopzone.jpg"/>
         <div className="overlayText">
@@ -13,6 +15,7 @@ function Home() {
       Start shopping and win exciting prices!</p>
       </div>
       <ProductList />
+      </div>
       </div>
     )
   }

@@ -1,0 +1,27 @@
+.nav {
+  
+ margin-top:10px;
+  padding: 10px;
+  /* overflow: hidden; */
+  background-color:black;
+  float: right;
+  font-size: 15px;
+  margin-right: 10px;
+  display: inline;
+  
+  }
+.li{
+    color:white;
+    text-align: right;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+/* .li {
+  float: right;
+  color: white;
+  text-align: right;
+  padding: 10px;
+  text-decoration: none;
+} */
