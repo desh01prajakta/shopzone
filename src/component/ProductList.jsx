@@ -42,7 +42,7 @@ function ProductList() {
       : data;
 
   return (
-    <div>
+    <div className="productListContainer">
       <h2>Product List</h2>
       <Category
         selectedCategory={selectedCategory}
@@ -52,6 +52,7 @@ function ProductList() {
         selectedPrice={selectedPrice}
         setSelectedPrice={setSelectedPrice}
       />
+      <div className="productContainer">
       {productToDisplay.map((product) => {
         return (
           <div className="container" key={product.id}>
@@ -70,6 +71,7 @@ function ProductList() {
           </div>
         );
       })}
+    </div>
     </div>
   );
 }
