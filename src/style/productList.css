@@ -30,7 +30,7 @@
     height: 200px;
     padding: 5px;
     margin-left: 100px;
-    /* margin-right: 700px; */ */
+    /* margin-right: 700px; */ 
     /* margin-bottom: 20px;
     margin-top: 20px; */
     border-radius: 2%;
@@ -46,7 +46,10 @@
 }
 
 .productContainer{
-  border: solid black;margin-top: 5px;
+  border: solid black;
+  width: 1090px;
+  margin-left: 160px;
+  margin-top: -400px;
   /* display:inline-flexbox; */
 }
 
