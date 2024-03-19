@@ -1,9 +1,10 @@
 import { useProductDetailsQuery } from "../redux/api";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import "../style/productList.css";
+import "../style/productDetails.css";
 import { Link } from "react-router-dom";
 import { addToCart } from "../cartSlice";
+import "../style/navbar.css"
 
 function ProductDetails({ token }) {
   const dispatch = useDispatch();
@@ -28,12 +29,12 @@ function ProductDetails({ token }) {
   }
 
   return (
-    <div>
+    <div className="productPage">
       <h2>Product Details</h2>
 
-      <div className="container">
+      <div className="container1">
         <img className="picture" src={data.image} alt={data.title} />
-        <div className="details">
+        <div className="details1">
           <h3> {data.title}</h3>
           <p>Price: {data.price}</p>
           <p>Description: {data.description} </p>

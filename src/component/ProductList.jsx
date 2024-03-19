@@ -63,9 +63,11 @@ function ProductList() {
               <img src="../../public/images/star.png" width={"15px"} />
               <span>{product.rating.rate}</span>
               <span>({product.rating.count})</span>
+              <div>
               <Link className="prod" to={`/productdetails/${product.id}`}>
                   See Details
                 </Link>
+                </div>
                 </div>
             </div>
           </div>
