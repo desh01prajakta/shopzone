@@ -59,14 +59,14 @@ function ProductList() {
             <img className="picture" src={product.image} />
             <div className="details">
               <h3> {product.title}</h3>
+              <div className="rating">
               <img src="../../public/images/star.png" width={"15px"} />
               <span>{product.rating.rate}</span>
               <span>({product.rating.count})</span>
-              <div>
-                <Link className="prod" to={`/productdetails/${product.id}`}>
+              <Link className="prod" to={`/productdetails/${product.id}`}>
                   See Details
                 </Link>
-              </div>
+                </div>
             </div>
           </div>
         );

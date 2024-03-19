@@ -12,7 +12,7 @@ function Category({ selectedCategory, setSelectedCategory }) {
       <h2 className="title"> Category </h2>
       <label className="category">
         <input onChange={handleChange} type="radio" name="test" value="All" title="All" />
-        <span className="checkmark"></span>All
+        All
       </label>
       <label className="category">
         <input
@@ -22,7 +22,7 @@ function Category({ selectedCategory, setSelectedCategory }) {
           value="Men's clothing"
           title="Men's clothing"
         />
-        <span className="checkmark"></span>Men's clothing
+        Men's clothing
       </label>
       <label className="category">
         <input
@@ -32,7 +32,7 @@ function Category({ selectedCategory, setSelectedCategory }) {
           value="jewelery"
           title="jewelery"
         />
-        <span className="checkmark"></span>jewelery
+        jewelery
       </label>
       <label className="category">
         <input
@@ -42,7 +42,7 @@ function Category({ selectedCategory, setSelectedCategory }) {
           value="Electronics"
           title="Electronics"
         />
-        <span className="checkmark"></span>Electronics
+        Electronics
       </label>
       <label className="category">
         <input
@@ -52,7 +52,7 @@ function Category({ selectedCategory, setSelectedCategory }) {
           value="Women's Clothing"
           title="Women's Clothing"
         />
-        <span className="checkmark"></span>Women's Clothing
+        Women's Clothing
       </label>
     </div>
   );
