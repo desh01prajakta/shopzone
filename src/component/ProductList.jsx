@@ -43,7 +43,7 @@ function ProductList() {
 
   return (
     <div className="productListContainer">
-      <h2>Product List</h2>
+      <h2 className="productList">Product List</h2>
       <Category
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}

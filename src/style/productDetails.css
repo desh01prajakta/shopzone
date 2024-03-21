@@ -1,24 +1,74 @@
-.container1{
-    background-color:floralwhite;
-    width:350px;
-    height:700px;
-    border: solid black;
-    margin-left: 450px;
+.heading{
+    border: black solid;
+    margin-right: 1050px;
+    margin-top: 20px;
+    background-color: cadetblue;
 }
-/* .productPage{
-    background-color: bisque;
-    width: 1263px;
-    height:1200px;
-    margin-top: -25px;
-    margin-left: 300px;
-} */
 
-.picture{
-    width: 150px;
-    height:auto;
-}
-.details1{
 
-    width: 300px;
-    height:auto
+.container1 {
+  background-color: white;
+  width: 350px;
+  height: auto;
+  margin-left: 450px;
+  /* border-color:beige;
+    border-style: ridge; */
+    border-width: 5px;
+    padding: 3px;
+    position:absolute;
 }
+.productPage {
+  background-color: white;
+  width: 1263px;
+  height: 1200px;
+  margin-top: -10px;
+  /* margin-left: 300px; */
+}
+
+.picture1 {
+  width: 150px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-left: 95px;
+  margin-bottom: 10px;
+}
+.details1 {
+  width: 300px;
+  height: auto;
+  margin-left: 20px;
+  text-wrap:wrap ;
+    display: block;
+    margin-bottom: 10px;
+    padding-top:3px;
+    padding-bottom: 1px;
+    padding-left: 8px;
+    padding-right: 5px;
+    font-size: 10px;
+    justify-content:center;
+    align-items: center;
+    background-color:cadetblue;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    
+}
+.prod1 {
+  font-size: 15px;
+  border: solid blanchedalmond;
+  padding: 5px;
+  background-color:white;
+  color: black;
+  margin-top: 15px;
+  width: 80px;
+  height: 25px;
+  margin-bottom: 10px;
+  display: inline-block;
+  align-items: center;
+  margin-left: 90px;
+}
+.rating1{
+    margin-top: 1px;
+    margin-bottom: 2px;
+    background-color: cadetblue;
+    font-size: 15px;;
+  }

@@ -30,19 +30,21 @@ function ProductDetails({ token }) {
 
   return (
     <div className="productPage">
-      <h2>Product Details</h2>
+      <h2 className="heading">Product Details</h2>
 
       <div className="container1">
-        <img className="picture" src={data.image} alt={data.title} />
+        <img className="picture1" src={data.image} alt={data.title} />
         <div className="details1">
           <h3> {data.title}</h3>
           <p>Price: {data.price}</p>
           <p>Description: {data.description} </p>
           <p>Category: {data.category}</p>
+          <div className="rating1">
           <img src="../../public/images/star.png" width={"15px"} />
           <span>{data.rating.rate}</span>
           <span>({data.rating.count})</span>
-          <div className="prod">
+          </div>
+          <div className="prod1">
             {token && (
               <Link to={"/cart"} onClick={handleAddToCart}>
                 Add to Cart
