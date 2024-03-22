@@ -2,6 +2,7 @@ import { useLoginMutation } from "../redux/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUsersQuery } from "../redux/api";
+import "../style/login.css";
 
 function Login(props) {
   // const [login, { data, error, isLoading }] = useLoginMutation();
@@ -46,37 +47,40 @@ function Login(props) {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
 
-  
   return (
-    <div>
-      <h2>LogIn</h2>
-      {errorMsg ? <p>{errorMsg}</p> : <span />}
-      <form onSubmit={eventHandler}>
-        <label>
-          Username
-          <input
-            type="text"
-            placeholder="username"
-            name="username"
-            autoComplete="on"
-            value={userInfo.username}
-            onChange={onUserInput}
-          />
-        </label>
-        <label>
-          Password
-          <input
-            name="password"
-            type="password"
-            placeholder="password"
-            autoComplete="on"
-            value={userInfo.password}
-            onChange={onUserInput}
-          />
-        </label>
+    <div className="loginContainer">
+      <div className="loginpage">
+        <h2 className="login">LogIn</h2>
+        <div className="form">
+          {errorMsg ? <p>{errorMsg}</p> : <span />}
+          <form onSubmit={eventHandler}>
+            <label className="details2">
+              Username
+              <input
+                type="text"
+                placeholder="username"
+                name="username"
+                autoComplete="on"
+                value={userInfo.username}
+                onChange={onUserInput}
+              />
+            </label>
+            <label className="details2">
+              Password
+              <input
+                name="password"
+                type="password"
+                placeholder="password"
+                autoComplete="on"
+                value={userInfo.password}
+                onChange={onUserInput}
+              />
+            </label>
 
-        <button>Submit</button>
-      </form>
+            <button className="button1">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
