@@ -8,7 +8,7 @@ function Home() {
       <div>
         <h3 className="title1" >Shopzone!!</h3>
       <div className="imageContainer">
-        <img className= "shopImage" src="../public/images/shopzone.jpg"/>
+        <img className= "shopImage" src="../../public/images/shopzone.jpg"/>
         <div className="overlayText">
         <h1>Welcome To Shopzone!</h1>
       <p>
