@@ -41,9 +41,9 @@ function Register({setToken}) {
       <h2 className="register1">Register</h2>
       {errorMsg ? <p>{errorMsg}</p> : <span />}
       <form onSubmit={eventHandler}>
-        <label>
+        <label className="username">
           Username
-          <input
+          <input className="user"
             type="text"
             placeholder="username"
             name="username"
@@ -51,9 +51,10 @@ function Register({setToken}) {
             onChange={onUserInput}
           />
         </label>
-        <label>
+        <label className="password">
           Password
           <input
+          className="pw"
             name="password"
             type="password"
             placeholder="password"
@@ -61,9 +62,10 @@ function Register({setToken}) {
             onChange={onUserInput}
           />
         </label>
-        <label>
+        <label className="email">
           Email
           <input
+          className="email1"
             type="text"
             placeholder="email"
             name="email"
@@ -71,9 +73,10 @@ function Register({setToken}) {
             onChange={onUserInput}
           />
         </label>
-        <label>
+        <label className="firstname">
           First Name
           <input
+          className="first"
             type="text"
             placeholder="first_name"
             name="first_name"
@@ -81,9 +84,10 @@ function Register({setToken}) {
             onChange={onUserInput}
           />
         </label>
-        <label>
+        <label className="lastname">
           Last Name
           <input
+          className="last"
             type="text"
             placeholder="last_name"
             name="last_name"
@@ -91,7 +95,7 @@ function Register({setToken}) {
             onChange={onUserInput}
           />
         </label>
-        <button>Submit</button>
+        <button className="submit">Submit</button>
       </form>
     </div>
   );
