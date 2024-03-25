@@ -40,7 +40,7 @@ function ProductDetails({ token }) {
           <p>Description: {data.description} </p>
           <p>Category: {data.category}</p>
           <div className="rating1">
-          <img src="../../public/images/star.png" width={"15px"} />
+          <img src="../../public/star.png" width={"15px"} />
           <span>{data.rating.rate}</span>
           <span>({data.rating.count})</span>
           </div>
