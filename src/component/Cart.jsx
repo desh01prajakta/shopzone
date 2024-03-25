@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addToCart, removeCart } from "../cartSlice";
+import "../style/cart.css"
+
 
 function Carts({ token, userId }) {
   const navigate = useNavigate();
@@ -34,11 +36,11 @@ function Carts({ token, userId }) {
 
   return (
     <div>
-      <h2>Selected Items</h2>
+      <h2 className="items">Selected Items</h2>
       {cartProducts.map((product) => (
-        <div key={product.id} className="container">
+        <div key={product.id} className="container5">
           <img className="picture" src={product.image} alt={product.title} />
-          <div className="details">
+          <div className="details5">
             <h3>{product.title}</h3>
             <p>Price: {product.price}</p>
             <p>Quantity: {product.quantity}</p>
