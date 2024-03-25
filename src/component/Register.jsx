@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import api
 import { useRegisterMutation } from "../redux/api";
+import "../style/register.css"
 
 function Register({setToken}) {
   const [userInfo, setUserInfo] = useState({
@@ -36,8 +37,8 @@ function Register({setToken}) {
   };
   
   return (
-    <div>
-      <h2>Register</h2>
+    <div className="register">
+      <h2 className="register1">Register</h2>
       {errorMsg ? <p>{errorMsg}</p> : <span />}
       <form onSubmit={eventHandler}>
         <label>
