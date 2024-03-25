@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../style/productList.css";
 import Category from "./Category";
 import Price from "./Price";
+import star from "../../public/star.png"
 
 function ProductList() {
   const { data, error, isLoading } = useProductListQuery();
@@ -60,7 +61,7 @@ function ProductList() {
             <div className="details">
               <h3> {product.title}</h3>
               <div className="rating">
-              <img src="../../public/star.png" width={"15px"} />
+              <img src= {star} width={"15px"} />
               <span>{product.rating.rate}</span>
               <span>({product.rating.count})</span>
               <div>
