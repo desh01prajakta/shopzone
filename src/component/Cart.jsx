@@ -35,7 +35,7 @@ function Carts({ token, userId }) {
   };
 
   return (
-    <div>
+    <div className="cartcontainer">
       <h2 className="items">Selected Items</h2>
       {cartProducts.map((product) => (
         <div key={product.id} className="container5">
