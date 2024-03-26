@@ -65,26 +65,28 @@
 }
 
 .productContainer{
-  border: solid black;
+  /* border: solid black; */
   width: 1090px;
-  height:2000px;
+  height:1600px;
   margin-left: 160px;
   margin-top: -400px;
-  background-color:lavender;
+  background-color:white;
   /* display:inline-flexbox; */
    
 }
 .productList{
   border: inset black;
-  margin-right: 1100px;
+  margin-right: 1200px;
   font-size: 20px;
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 1px;
   background-color: cadetblue;
   position: relative;
   width:120px
 }
-
+.productListContainer{
+  background-color: white;
+}
 
 
 

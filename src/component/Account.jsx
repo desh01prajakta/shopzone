@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useAccountQuery } from "../redux/api";
+import "../style/user.css";
 
 function Account({ userId, token }) {
-  
   const { data, error, isLoading } = useAccountQuery({ id: userId, token });
 
   if (error || (!data?.username && isLoading)) {
@@ -13,11 +13,11 @@ function Account({ userId, token }) {
     return <p>Loading...</p>;
   }
   return (
-    <section>
-      <h2>User</h2>
+    <div className="user4">
+      <h2 className="uname">User</h2>
       <div>
         {isLoading && <p>Loading...</p>}
-        <ul>
+        <ul className="userdetails4">
           <li>Username: {data.username}</li>
           <li>Email: {data.email}</li>
           <li>First Name: {data.name.firstname}</li>
@@ -32,11 +32,9 @@ function Account({ userId, token }) {
           <li>Street Number:{data.address.number}</li>
           <li>Street:{data.address.street}</li>
           <li>Zipcode:{data.address.zipcode}</li>
-      
         </ul>
- 
       </div>
-    </section>
+    </div>
   );
 }
 export default Account;

@@ -1,0 +1,27 @@
+.user4{
+    border: inset goldenrod;
+ width:350px;
+ height:400px;
+ margin-left: 500px;
+ margin-bottom: 50px;
+ background-color:white;
+ 
+}
+
+.uname{
+    border: inset black;
+    /* margin-right: 1100px; */
+    font-size: 25px;
+    padding: 5px;
+    margin-left: 130px;
+    background-color: cadetblue;
+    position: relative;
+    width: 70px;
+}
+
+.userdetails4{
+    background-color: lightblue;
+    border: ridge;
+    margin:10px;
+    height:300px
+}

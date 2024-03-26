@@ -1,23 +1,92 @@
-.items{
-    border: solid black;
-    width:150px;
-    background-color: cadetblue;
-    margin-left:0px;
+.items {
+  border: solid black;
+  width: 150px;
+  background-color: cadetblue;
+  margin-left: 0px;
+  padding: 5px;
+  align-self: center;
+  position: relative;
+  font-size: 20px;
+}
+.container5 {
+  width: 150px;
+  border: beige ridge 5px;
+  height: 400px;
+  padding: 3px;
+  /* margin-top: 20px; */
+  margin-left: 15px;
+  margin-bottom: 15px;
+  font-size: 10px;
+  font-family: "Times New Roman", Times, serif;
+  display: inline-block;
+  background-color: white;
+}
+
+.details5 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.title5 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+.price5 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.quantity5 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+.button5 {
+  background-color: black;
+  color: white;
+  font-size: 10px;
+  padding: 5px;
+  display: inline-block;
+  padding-inline: 10px;
+  margin: 5px;
+}
+
+.cartcontainer {
+  display: flex;
+  align-items: center;
+  background-color: lightblue;
+}
+
+.button55 {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+  display: inline-block;
+  padding-inline: 15px;
+  margin: 5px;
+}
+
+.button123{
+    background-color: black;
+    color: white;
+    font-size: 15px;
     padding:5px;
-    align-self: center;
+    /* display: inline-block; */
+    padding-inline: 10px;
+    margin: 5px;
+    width: 150px;
     position: relative;
-    font-size: 20px;
+    border-radius: 8px;
 }
-.container5{
-    width:150px;
-    border:beige ridge 5px;
-    height: 400px;
-    padding:3px;
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    font-size: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    display: inline-block;
-}
+
+
+
 

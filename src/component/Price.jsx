@@ -5,7 +5,7 @@ function Price({setSelectedPrice}){
         setSelectedPrice(event.target.value);
       };
     return(
-        <div className="mil">
+        <div className="categorycontainer">
             <h2 className="sidebar-title-price-title">Price</h2>
             <label className="category">
             <input onChange = {handleChange} type="radio" name="test2" value= "All"

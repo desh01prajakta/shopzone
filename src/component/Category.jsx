@@ -8,7 +8,7 @@ function Category({ selectedCategory, setSelectedCategory }) {
   };
 
   return (
-    <div className="mil">
+    <div className="categorycontainer">
       <h2 className="title"> Category </h2>
       <label className="category">
         <input onChange={handleChange} type="radio" name="test" value="All" title="All" />
