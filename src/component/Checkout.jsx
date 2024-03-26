@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import LastPage from "./LastPage";
+import "../style/checkout.css";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -43,8 +44,8 @@ function Checkout() {
 
   return (
     <div>
+      <h2 className="checkout">Checkout</h2>
       <div>
-        <h2>Checkout</h2>
         <form onSubmit={eventHandler}>
           <label>
             First Name{" "}
