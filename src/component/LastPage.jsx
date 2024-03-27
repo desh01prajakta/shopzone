@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "../style/lastpage.css"
 
 function LastPage() {
   const navigate = useNavigate();
@@ -8,8 +9,8 @@ function LastPage() {
 
   return (
     <div>
-      <h2>Your Order has been Placed</h2>
-      <button onClick={eventHandler}>Continue Shopping!</button>
+      <h2>Your Order has been Placed!</h2>
+      <button className="lastpage" onClick={eventHandler}>Continue Shopping!</button>
     </div>
   );
 }
