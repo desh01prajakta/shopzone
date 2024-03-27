@@ -3,8 +3,40 @@
     /* margin-right: 1100px; */
     font-size: 25px;
     padding: 5px;
-    margin-left: 130px;
+    margin-left: 44%;
     background-color: cadetblue;
     position: relative;
     width: 120px;
+}
+.checkoutform{
+    width: 200px;
+  height:270px;
+  border: ridge cadetblue;
+  margin-left: 40%;
+  padding: 20px;
+  display: block;
+  background-color: cadetblue;
+  
+}
+
+.details6{
+    margin-left: 20px;
+    display: block;
+    margin-bottom: 5px;
+    margin-bottom: 10px;
+    /* background-color: cadetblue; */
+}
+
+.placeorder{
+    background-color: black;
+    color:white;
+    margin-left: 40px;
+    margin-top: 10px;
+    padding:5px;
+    border-radius: 8px;
+}
+
+.backtocart{
+    background-color: black;
+    color: white;
 }

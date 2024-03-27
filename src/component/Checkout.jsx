@@ -45,9 +45,9 @@ function Checkout() {
   return (
     <div>
       <h2 className="checkout">Checkout</h2>
-      <div>
+      <div className="checkoutform">
         <form onSubmit={eventHandler}>
-          <label>
+          <label className="details6">
             First Name{" "}
             <input
               type="text"
@@ -57,7 +57,7 @@ function Checkout() {
               onChange={onUserInput}
             />
           </label>
-          <label>
+          <label className="details6">
             Last Name
             <input
               type="text"
@@ -67,7 +67,7 @@ function Checkout() {
               onChange={onUserInput}
             />
           </label>
-          <label>
+          <label className="details6">
             Address
             <input
               type="text"
@@ -77,7 +77,7 @@ function Checkout() {
               onChange={onUserInput}
             />
           </label>
-          <label>
+          <label className="details6">
             Phone Number
             <input
               type="tel"
@@ -87,8 +87,8 @@ function Checkout() {
               onChange={onUserInput}
             />
           </label>
-          <label>
-            Email
+          <label className="details6">
+            Email 
             <input
               type="text"
               placeholder="email"
@@ -97,11 +97,11 @@ function Checkout() {
               onChange={onUserInput}
             />
           </label>
-          <label onClick={placeOrderHandler}>Place your order</label>
+          <label className= "placeorder" onClick={placeOrderHandler}>Place your order</label>
         </form>
       </div>
       <div>
-        <button onClick={backToCartButton}>Back To Cart</button>
+        <button className="backtocart" onClick={backToCartButton}>Back To Cart</button>
       </div>
     </div>
   );
