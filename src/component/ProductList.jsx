@@ -44,7 +44,7 @@ function ProductList() {
 
   return (
     <div className="productListContainer">
-      <h2 className="productList">Product List</h2>
+      <h2 className="productList">Products</h2>
       <Category
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
@@ -59,7 +59,7 @@ function ProductList() {
           <div className="container" key={product.id}>
             <img className="picture" src={product.image} />
             <div className="details">
-              <h3> {product.title}</h3>
+              <h3 className="title7"> {product.title}</h3>
               <div className="rating">
               <img src= {star} width={"15px"} />
               <span>{product.rating.rate}</span>
