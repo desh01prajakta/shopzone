@@ -47,7 +47,7 @@ function ProductDetails({ token }) {
           </div>
           <div className="prod1">
             {token && (
-              <Link to={"/cart"} onClick={handleAddToCart}>
+              <Link className = "cartbutton" to={"/cart"} onClick={handleAddToCart}>
                 Add to Cart
               </Link>
             )}

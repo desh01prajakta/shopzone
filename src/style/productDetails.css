@@ -5,7 +5,11 @@
   background-color: cadetblue;
   padding: 5px;
 }
-
+.cartbutton{
+  font-size: 15px;
+  padding-bottom:2px;
+  padding-top:5px;
+}
 .container1 {
   background-color: white;
   width: 350px;
@@ -59,7 +63,7 @@
   color: black;
   margin-top: 15px;
   width: 80px;
-  height: 25px;
+  height: 20px;
   margin-bottom: 10px;
   display: inline-block;
   align-items: center;
