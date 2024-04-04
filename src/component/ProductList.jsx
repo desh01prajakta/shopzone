@@ -66,7 +66,7 @@ function ProductList() {
               <span>({product.rating.count})</span>
               <div>
               <Link className="prod" to={`/productdetails/${product.id}`}>
-                  Peoduct Details
+                  Product Details
                 </Link>
                 </div>
                 </div>
